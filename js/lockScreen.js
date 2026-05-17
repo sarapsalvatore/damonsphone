@@ -113,7 +113,8 @@ function updateDots() {
 /* CHECK CODE */
 function check() {
     if (code === correct) {
-        alert('Unlocked!');
+        document.getElementById('pinScreen').style.display = 'none';
+        document.getElementById('homeScreen').style.display = 'block';
     } else {
         alert('Wrong code');
         code = '';

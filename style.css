@@ -114,12 +114,12 @@ body {
 }
 
 .lock-screen-date {
-    font-size: 18px;
+    font-size: 28px;
     color: #fcfcfc;
 }
 
 .lock-screen-time {
-    font-size: 70px;
+    font-size: 120px;
     font-weight: bold;
 }
 
@@ -278,7 +278,7 @@ body {
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 12px;
+    font-size: 16px;
     opacity: 0.8;
     cursor: pointer;
 }
@@ -347,10 +347,106 @@ body {
 .bottom-actions {
     position: absolute;
     bottom: 20px;
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     padding: 0 25px;
-    font-size: 12px;
+    font-size: 16px;
     opacity: 0.8;
+}
+
+/* HOME SCREEN */
+.home-screen {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: url('images/ian-nina.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* WEATHER */
+.weather-widget {
+    width: 100%;
+    height: 160px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 20px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.weather-title {
+    font-size: 20px;
+}
+
+.weather-temp {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.weather-desc {
+    opacity: 0.8;
+}
+
+/* CALENDAR */
+.calendar-widget {
+    margin-top: 15px;
+    width: 120px;
+    height: 120px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+.calendar-day {
+    color: #ff453a;
+    font-size: 14px;
+}
+
+.calendar-date {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+/* APPS */
+.apps {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* APP ICON */
+.app {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
 }
