@@ -84,7 +84,10 @@ const correct = '000000';
 
 /* SWIPE UP */
 function swipeUp() {
+    /* swipe text zmizne */
     document.getElementById('swipeScreen').style.display = 'none';
+
+    /* PIN screen sa objaví */
     document.getElementById('pinScreen').style.display = 'flex';
 }
 
@@ -134,3 +137,43 @@ function emergency() {
         'There is no real emergency call functionality. What did you think...',
     );
 }
+
+/* applikacie  */
+
+function openApp(name) {
+    let appScreen = document.getElementById('appScreen');
+    appScreen.style.display = 'block';
+
+    if (name === 'calls') {
+        appScreen.innerHTML = `
+            <h2>Phone</h2>
+            <p>Mom</p>
+            <p>Dad</p>
+            <p>Unknown number</p>
+        `;
+    }
+
+    if (name === 'messages') {
+        appScreen.innerHTML = `
+            <h2>Messages</h2>
+            <p>Mom: Where are you?</p>
+            <p>You: I'm home</p>
+        `;
+    }
+
+    if (name === 'music') {
+        appScreen.innerHTML = `
+            <h2>Music</h2>
+            <p>🎵 playlist: Chill vibes</p>
+        `;
+    }
+
+    if (name === 'photos') {
+        appScreen.innerHTML = `
+            <h2>Photos</h2>
+            <p>No photos yet</p>
+        `;
+    }
+}
+setInterval(updateTime, 1000);
+updateTime();

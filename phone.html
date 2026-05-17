@@ -70,25 +70,27 @@
 
                 <!-- HOME SCREEN -->
                 <div id="homeScreen" class="home-screen">
-                    <!-- WEATHER -->
-                    <div class="weather-widget">
-                        <span class="weather-title">Košice</span>
-                        <span class="weather-temp">24°</span>
-                        <span class="weather-desc">Sunny</span>
-                    </div>
+                    <div class="home-screen-top">
+                        <!-- WEATHER -->
+                        <div class="weather-widget">
+                            <span class="weather-title">Košice</span>
+                            <span class="weather-temp">24°</span>
+                            <span class="weather-desc">Sunny</span>
+                        </div>
 
-                    <!-- CALENDAR -->
-                    <div class="calendar-widget">
-                        <span class="calendar-day">SUNDAY</span>
-                        <span class="calendar-date">17</span>
+                        <!-- CALENDAR -->
+                        <div class="calendar-widget">
+                            <span class="calendar-day">SUNDAY</span>
+                            <span class="calendar-date">17</span>
+                        </div>
                     </div>
 
                     <!-- APPS -->
                     <div class="apps">
-                        <div class="app">📷</div>
-                        <div class="app">💬</div>
-                        <div class="app">🎵</div>
-                        <div class="app">🖤</div>
+                        <div class="app" onclick="openApp('calls')">📞</div>
+                        <div class="app" onclick="openApp('messages')">💬</div>
+                        <div class="app" onclick="openApp('music')">🎵</div>
+                        <div class="app" onclick="openApp('photos')">🖼️</div>
                     </div>
                 </div>
             </div>
