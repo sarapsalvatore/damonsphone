@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.intro {
+    font-family: 'Courier New', monospace;
+
+    text-align: center;
+}
+
+.welcome {
+    font-family: 'Brush Script MT', cursive;
+}
