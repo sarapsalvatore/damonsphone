@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+
+        <title>Damon's Phone - Phone</title>
+    </head>
+    <body>
+        <div class="phone-wrapper">
+            <div class="phone">
+                <div class="status-bar">
+                    <div class="data">
+                        <div class="box box-1"></div>
+                        <div class="box box-2"></div>
+                        <div class="box box-3"></div>
+                        <div class="box box-4"></div>
+                    </div>
+
+                    <span class="network-type">5G</span>
+
+                    <div class="battery-container">
+                        <div class="battery">
+                            <div class="battery-level"></div>
+                            <span class="battery-percentage-label">81</span>
+                        </div>
+                        <div class="battery-end"></div>
+                    </div>
+                </div>
+
+                <span id="date" class="lock-screen-date"></span>
+                <span id="time" class="lock-screen-time"></span>
+
+                <!-- SWIPE TEXT -->
+                <div id="swipeScreen" class="swipe-screen" onclick="swipeUp()">swipe up ↑</div>
+
+                <!-- PIN SCREEN -->
+                <div id="pinScreen" class="pin-screen">
+                    <div class="dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+
+                    <div class="keypad">
+                        <button onclick="press(1)">1</button>
+                        <button onclick="press(2)">2</button>
+                        <button onclick="press(3)">3</button>
+
+                        <button onclick="press(4)">4</button>
+                        <button onclick="press(5)">5</button>
+                        <button onclick="press(6)">6</button>
+
+                        <button onclick="press(7)">7</button>
+                        <button onclick="press(8)">8</button>
+                        <button onclick="press(9)">9</button>
+
+                        <div></div>
+                        <button onclick="press(0)">0</button>
+                        <div></div>
+                    </div>
+
+                    <!-- bottom left + right -->
+                    <div class="bottom-actions">
+                        <span onclick="emergency()">Emergency</span>
+                        <span onclick="cancel()">Delete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JAVASCRIPT -->
+        <script src="js/scalePhone.js"></script>
+        <script src="js/lockScreen.js"></script>
+    </body>
+</html>

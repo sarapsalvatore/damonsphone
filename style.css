@@ -1,15 +1,20 @@
+/* GENERAL */
+
 body {
-    background-color: black;
+    background: #0a0a0a;
     color: white;
     font-family: Arial, sans-serif;
     padding: 20px;
 
-    height: 100%;
+    margin: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+/* INTRO PAGE */
 
 .intro {
     font-family: 'Courier New', monospace;
@@ -19,4 +24,347 @@ body {
 
 .welcome {
     font-family: 'Brush Script MT', cursive;
+}
+
+.open-phone-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #9e0414;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* PHONE PAGE */
+
+.phone-wrapper {
+    width: 360px;
+    height: 720px;
+    transform-origin: center;
+}
+
+.phone {
+    width: 360px;
+    height: 720px;
+
+    background: black;
+
+    border-radius: 45px;
+
+    border: 8px solid #1c1c1e;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 0 2px #2c2c2e,
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 30px;
+}
+
+/* notch */
+.phone::before {
+    content: '';
+
+    position: absolute;
+
+    top: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 140px;
+    height: 28px;
+
+    background: #111;
+
+    border-radius: 20px;
+
+    z-index: 1000;
+}
+
+/* speaker */
+.phone::after {
+    content: '';
+
+    position: absolute;
+
+    top: 22px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 60px;
+    height: 6px;
+
+    background: #2c2c2e;
+
+    border-radius: 10px;
+
+    z-index: 1001;
+}
+
+.lock-screen-date {
+    font-size: 18px;
+    color: #888;
+}
+
+.lock-screen-time {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.topRight {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    opacity: 0.9;
+    z-index: 10;
+}
+
+.bottomLeft {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    z-index: 10;
+}
+
+.bottomRight {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    z-index: 10;
+}
+
+body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial;
+}
+
+.phone {
+    width: 360px;
+    height: 650px;
+    background: black;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* LOCK */
+.lock {
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1520975922284-9c4f3c3c3c0d')
+        center/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.time {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.date {
+    text-align: center;
+    opacity: 0.8;
+}
+
+.status-bar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 2px;
+    height: 12px;
+}
+
+.box {
+    width: 4px;
+    background-color: #ffffff40;
+    border-radius: 1.5px;
+}
+
+.box-1 {
+    height: 6px;
+    background-color: white;
+}
+
+.box-2 {
+    height: 8px;
+    background-color: white;
+}
+
+.box-3 {
+    height: 10px;
+    background-color: white;
+}
+
+.box-4 {
+    height: 12px;
+}
+
+.network-type {
+    font-weight: bold;
+}
+
+.battery-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1px;
+}
+
+.battery {
+    position: relative;
+    width: 26px;
+    height: 14px;
+    background-color: #ffffff40;
+    border-radius: 4px;
+}
+
+.battery-level {
+    width: 81%;
+    height: 100%;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.battery-percentage-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11.5px;
+    font-weight: bolder;
+    color: #111;
+    text-align: center;
+    letter-spacing: 0.01em;
+    line-height: 12.5px;
+    text-transform: uppercase;
+}
+
+.battery-end {
+    width: 2px;
+    height: 4px;
+    background-color: #ffffff40;
+    border-radius: 0 4px 4px 0;
+}
+
+/* SWIPE SCREEN */
+.swipe-screen {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* PIN SCREEN */
+.pin-screen {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* dots */
+.dots {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.filled {
+    background: white;
+}
+
+/* keypad GRID 3x3 */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.keypad button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #222;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.keypad button:active {
+    background: #444;
+}
+
+/* bottom buttons */
+.bottom-actions {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    font-size: 12px;
+    opacity: 0.8;
 }
