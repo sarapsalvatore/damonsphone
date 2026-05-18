@@ -495,3 +495,18 @@ body {
 .app:active {
     transform: scale(0.9);
 }
+
+.phone-app {
+    width: 62px;
+    height: 62px;
+    background: #4cd137;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 32px;
+}
