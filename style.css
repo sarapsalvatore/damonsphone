@@ -490,23 +490,37 @@ body {
 
 .app {
     transition: transform 0.15s ease;
+    border-radius: 20px;
 }
 
 .app:active {
     transform: scale(0.9);
 }
 
-.phone-app {
-    width: 62px;
-    height: 62px;
-    background: #4cd137;
+.app-icon {
+    font-size: 36px;
+}
 
-    border-radius: 18px;
+.app-icon-white {
+    color: linear-gradient(45deg, #ffffff, #ffffffa5);
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.green-app {
+    border: 1px solid #53d83f;
+    background: linear-gradient(-45deg, #4cd137, #2c961b);
+}
 
-    color: white;
-    font-size: 32px;
+.bi bi-compass app-icon-compass {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border: 1px solid #60a5fa;
+}
+
+.app-music {
+    background: linear-gradient(135deg, #dc2a4e, #c3361d);
+    border: 1px solid #6b7280;
+}
+
+.app-compass {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border: 1px solid #6077fa;
 }
