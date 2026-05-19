@@ -185,10 +185,13 @@ body {
     position: absolute;
     top: 15px;
     right: 15px;
+
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
+
+    z-index: 9999;
 }
 
 .data {
@@ -365,6 +368,7 @@ body {
     background-position: center;
     padding: 20px;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .home-screen-top {
@@ -375,7 +379,7 @@ body {
 
 /* WEATHER */
 .weather-widget {
-    margin-top: 15px;
+    margin-top: 100px;
     width: 60%;
     height: 120px;
     border-radius: 30px;
@@ -406,7 +410,7 @@ body {
 
 /* CALENDAR */
 .calendar-widget {
-    margin-top: 15px;
+    margin-top: 100px;
     width: 120px;
     height: 120px;
     border-radius: 25px;
@@ -523,4 +527,29 @@ body {
 .app-compass {
     background: linear-gradient(135deg, #3b82f6, #1e40af);
     border: 1px solid #6077fa;
+}
+
+.apps {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    height: 85px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+
+    .apps-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 18px;
+        width: 100%;
+    }
+
+    z-index: 10;
 }
