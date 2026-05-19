@@ -521,35 +521,127 @@ body {
 
 .app-music {
     background: linear-gradient(135deg, #dc2a4e, #c3361d);
-    border: 1px solid #6b7280;
+    border: 1px solid #dc2a4e;
 }
 
 .app-compass {
     background: linear-gradient(135deg, #3b82f6, #1e40af);
     border: 1px solid #6077fa;
 }
+.apps-row {
+    position: absolute;
+    right: 15px;
+    bottom: 120px;
+    display: flex;
+    justify-content: space-evenly;
+}
 
-.apps {
+/* APPS GRID */
+.apps-grid {
     position: absolute;
     bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
 
-    width: 90%;
-    height: 85px;
+    width: 100%;
 
-    border-radius: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
 
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(20px);
+/* COLUMN */
+.app-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 
-    .apps-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 18px;
-        width: 100%;
-    }
+/* LAST COLUMN */
+.last-column {
+    justify-content: flex-end;
+}
 
-    z-index: 10;
+/* APP */
+.app {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.15s ease;
+}
+
+/* CLICK EFFECT */
+.app:active {
+    transform: scale(0.9);
+}
+
+/* ICON */
+.app-icon {
+    font-size: 32px;
+}
+
+/* WHITE ICON */
+.app-icon-white {
+    color: white;
+}
+
+/* GREEN APP */
+.green-app {
+    border: 1px solid #53d83f;
+    background: linear-gradient(-45deg, #4cd137, #2c961b);
+}
+
+/* COMPASS */
+.app-compass {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border: 1px solid #6077fa;
+}
+
+/* MUSIC */
+.app-music {
+    background: linear-gradient(135deg, #dc2a4e, #c3361d);
+    border: 1px solid #dc2a4e;
+}
+
+.app-instagram {
+    background: linear-gradient(135deg, #ff0080, #ff7a00, #ffd000);
+    border: 1px solid #ff7a00;
+}
+.app-whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    border: 1px solid #25d366;
+}
+.app-snapchat {
+    background: linear-gradient(135deg, #fffc00, #ffd500);
+
+    border: 1px solid #fff700;
+
+    color: black;
+}
+.app-messenger {
+    background: linear-gradient(135deg, #00b2ff, #006aff);
+
+    border: 1px solid #4cc2ff;
+}
+.app-camera {
+    background: linear-gradient(135deg, #5f5f5f, #1f1f1f);
+
+    border: 1px solid #8b8b8b;
+}
+.app-gallery {
+    background: linear-gradient(135deg, #ff5fa2, #8f5bff);
+
+    border: 1px solid #c48fff;
+}
+.app-mail {
+    background: linear-gradient(135deg, #4da3ff, #005eff);
+
+    border: 1px solid #79b8ff;
 }
