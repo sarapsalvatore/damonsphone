@@ -377,60 +377,109 @@ body {
     justify-content: space-between;
 }
 
-/* WEATHER */
-.weather-widget {
-    margin-top: 100px;
-    width: 60%;
-    height: 120px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+/* ŠIROKÝ KALENDÁR WIDGET */
+.ios-calendar-widget {
+    /* Mierne sme zväčšili výšku z 160px na 180px, aby mali 5-6 riadkové mesiace dosť miesta */
+    margin-top: 30px;
+    width: 320px;
+    height: 180px;
+
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding-left: 20px;
     color: white;
+    padding: 18px; /* Mierne zmenšený padding pre viac miesta vo vnútri */
     box-sizing: border-box;
+
+    position: absolute;
+    top: 240px;
+    left: 40%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    /* SKRYJE VŠETKO, ČO BY CHCELO PRETIECŤ */
+    overflow: hidden;
 }
 
-.weather-title {
-    font-size: 20px;
-}
-
-.weather-temp {
-    font-size: 55px;
-    font-weight: bold;
-}
-
-.weather-desc {
-    opacity: 0.8;
-}
-
-/* CALENDAR */
-.calendar-widget {
-    margin-top: 100px;
-    width: 120px;
-    height: 120px;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(1px);
+/* Ľavá strana (WED 20) */
+.cal-left {
+    flex: 0.8;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+}
+
+.cal-day-text {
+    font-size: 26px; /* Jemne zmenšené, aby to lepšie sedelo */
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.cal-date-text {
+    font-size: 64px; /* Jemne zmenšené */
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 5px;
+}
+
+/* Pravá strana (Mriežka) */
+.cal-right {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.cal-month-text {
+    text-align: right;
+    font-size: 11px; /* Zmenšené z 13px */
+    letter-spacing: 1.5px;
+    color: #e0e0e0;
+    margin-top: 0px;
+    margin-bottom: 8px; /* Menšia medzera pod mesiacom */
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cal-grid-header,
+.cal-grid-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 4px 1px; /* Zmenšená vertikálna medzera medzi riadkami dní */
+}
+
+.cal-grid-header span {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.cal-grid-days span {
+    font-size: 11px; /* Zmenšené z 12px, aby sa zmestilo všetkých 5-6 riadkov */
+    width: 20px; /* Zmenšené z 22px */
+    height: 20px; /* Zmenšené z 22px */
+    display: flex;
     align-items: center;
-
-    color: white;
+    justify-content: center;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.calendar-day {
-    color: #ff453a;
-    font-size: 14px;
-}
-
-.calendar-date {
-    font-size: 45px;
+/* Aktuálny deň s bielym podkladom */
+.cal-grid-days span.active {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
     font-weight: bold;
 }
 
@@ -517,6 +566,7 @@ body {
 .bi bi-compass app-icon-compass {
     background: linear-gradient(135deg, #3b82f6, #1e40af);
     border: 1px solid #60a5fa;
+    transform: translateY(20px);
 }
 
 .app-music {
@@ -536,19 +586,17 @@ body {
     justify-content: space-evenly;
 }
 
-/* APPS GRID */
 .apps-grid {
     position: absolute;
     bottom: 25px;
     left: 0;
-
     width: 100%;
-
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-end;
-}
 
+    /* ZMENA TU: Zmenili sme flex-end na flex-start */
+    align-items: flex-start;
+}
 /* COLUMN */
 .app-column {
     display: flex;
@@ -628,10 +676,14 @@ body {
 .app-instagram {
     background: linear-gradient(135deg, #ff0080, #, #ffd000);
     border: 1px solid rgb(58, 57, 55);
+    margin-bottom: 50px;
 }
 .app-whatsapp {
     background: linear-gradient(135deg, #25d366, #128c7e);
     border: 1px solid #25d366;
+
+    /* PRIDAJ TENTO RIADOK: Záporná hodnota vystrelí ikonu smerom HORE */
+    transform: translateY(-20px);
 }
 .app-snapchat {
     background: linear-gradient(135deg, #fffc00, #ffd500);
@@ -686,4 +738,8 @@ body {
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45);
 
     z-index: -1;
+}
+/* Vyberie poslednú ikonu v každom stĺpci (tvoj spodný riadok) */
+.app-column .app:last-child {
+    margin-top: 60px; /* TÁTO MEDZERA: Odtlačí spodný riadok od aplikácií nad ním */
 }

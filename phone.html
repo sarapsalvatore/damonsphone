@@ -73,17 +73,18 @@
                 <!-- HOME SCREEN -->
                 <div id="homeScreen" class="home-screen">
                     <div class="home-screen-top">
-                        <!-- WEATHER -->
-                        <div class="weather-widget">
-                            <span class="weather-title">Košice</span>
-                            <span class="weather-temp">24°</span>
-                            <span class="weather-desc">Sunny</span>
-                        </div>
-
-                        <!-- CALENDAR -->
-                        <div class="calendar-widget">
-                            <span class="calendar-day">SUNDAY</span>
-                            <span class="calendar-date">17</span>
+                        <div class="ios-calendar-widget" id="dynamicCalendar">
+                            <div class="cal-left">
+                                <div class="cal-day-text" id="calDay">MON</div>
+                                <div class="cal-date-text" id="calDate">21</div>
+                            </div>
+                            <div class="cal-right">
+                                <div class="cal-month-text" id="calMonth">SEPTEMBER</div>
+                                <div class="cal-grid-header">
+                                    <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                                </div>
+                                <div class="cal-grid-days" id="calDaysGrid"></div>
+                            </div>
                         </div>
                     </div>
 

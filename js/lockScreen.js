@@ -177,3 +177,68 @@ function openApp(name) {
 }
 setInterval(updateTime, 1000);
 updateTime();
+
+function updateCalendarWidget() {
+    const dateObj = new Date();
+    const year = dateObj.getFullYear();
+    const month = dateObj.getMonth();
+    const today = dateObj.getDate();
+    const dayOfWeek = dateObj.getDay();
+
+    const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    const monthNames = [
+        'JANUARY',
+        'FEBRUARY',
+        'MARCH',
+        'APRIL',
+        'MAY',
+        'JUNE',
+        'JULY',
+        'AUGUST',
+        'SEPTEMBER',
+        'OCTOBER',
+        'NOVEMBER',
+        'DECEMBER',
+    ];
+
+    // 1. Nastavenie ľavého panela
+    document.getElementById('calDay').textContent = dayNames[dayOfWeek];
+    document.getElementById('calDate').textContent = today;
+
+    // 2. Nastavenie mesiaca vpravo
+    document.getElementById('calMonth').textContent = monthNames[month];
+
+    // 3. Logika pre mriežku
+    // Zistíme, na ktorý deň v týždni pripadá 1. deň v mesiaci (aby sme ho správne odsadili)
+    const firstDay = new Date(year, month, 1).getDay();
+    // Zistíme počet dní v aktuálnom mesiaci
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    const grid = document.getElementById('calDaysGrid');
+    grid.innerHTML = ''; // Vymaže predchádzajúce údaje pri aktualizácii
+
+    // Vygenerovanie prázdnych políčok pred prvým dňom v mesiaci
+    for (let i = 0; i < firstDay; i++) {
+        const emptySpan = document.createElement('span');
+        grid.appendChild(emptySpan);
+    }
+
+    // Vygenerovanie reálnych dní od 1 do konca mesiaca
+    for (let i = 1; i <= daysInMonth; i++) {
+        const daySpan = document.createElement('span');
+        daySpan.textContent = i;
+
+        // Ak je vykresľovaný deň dnešný, pridáme mu triedu pre biele pozadie
+        if (i === today) {
+            daySpan.classList.add('active');
+        }
+
+        grid.appendChild(daySpan);
+    }
+}
+
+// Spustenie funkcie pri načítaní stránky
+updateCalendarWidget();
+
+// Kontrola každý deň (každú 1 minútu), aby sa kalendár o polnoci prepol aj bez refreshe
+setInterval(updateCalendarWidget, 60000);
