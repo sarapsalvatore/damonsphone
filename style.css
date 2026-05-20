@@ -592,27 +592,42 @@ body {
     color: white;
 }
 
-/* GREEN APP */
 .green-app {
-    border: 1px solid #53d83f;
-    background: linear-gradient(-45deg, #4cd137, #2c961b);
+    background: rgb(0, 0, 0);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45);
 }
 
-/* COMPASS */
 .app-compass {
-    background: linear-gradient(135deg, #3b82f6, #1e40af);
-    border: 1px solid #6077fa;
+    background: rgba(0, 0, 0);
+
+    backdrop-filter: blur(20px);
+    -webkit-bacdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45);
 }
 
-/* MUSIC */
 .app-music {
-    background: linear-gradient(135deg, #dc2a4e, #c3361d);
-    border: 1px solid #dc2a4e;
+    background: rgba(0, 0, 0);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45);
 }
 
 .app-instagram {
-    background: linear-gradient(135deg, #ff0080, #ff7a00, #ffd000);
-    border: 1px solid #ff7a00;
+    background: linear-gradient(135deg, #ff0080, #, #ffd000);
+    border: 1px solid rgb(58, 57, 55);
 }
 .app-whatsapp {
     background: linear-gradient(135deg, #25d366, #128c7e);
@@ -644,4 +659,31 @@ body {
     background: linear-gradient(135deg, #4da3ff, #005eff);
 
     border: 1px solid #79b8ff;
+}
+
+.apps-grid::before {
+    content: '';
+
+    position: absolute;
+
+    bottom: -10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 88%;
+    height: 95px;
+
+    border-radius: 30px;
+
+    background: rgba(60, 60, 60, 0.35);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45);
+
+    z-index: -1;
 }
