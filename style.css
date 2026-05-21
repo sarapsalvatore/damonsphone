@@ -566,7 +566,6 @@ body {
 .bi bi-compass app-icon-compass {
     background: linear-gradient(135deg, #3b82f6, #1e40af);
     border: 1px solid #60a5fa;
-    transform: translateY(20px);
 }
 
 .app-music {
@@ -613,6 +612,7 @@ body {
 .app {
     width: 72px;
     height: 72px;
+    position: relative;
     border-radius: 18px;
 
     background: rgba(255, 255, 255, 0.2);
@@ -742,4 +742,8 @@ body {
 /* Vyberie poslednú ikonu v každom stĺpci (tvoj spodný riadok) */
 .app-column .app:last-child {
     margin-top: 60px; /* TÁTO MEDZERA: Odtlačí spodný riadok od aplikácií nad ním */
+}
+
+.app-camera-move {
+    margin-top: -630px;
 }
