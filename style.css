@@ -381,7 +381,7 @@ body {
 .ios-calendar-widget {
     /* Mierne sme zväčšili výšku z 160px na 180px, aby mali 5-6 riadkové mesiace dosť miesta */
     margin-top: 30px;
-    width: 320px;
+    width: 360px;
     height: 180px;
 
     background: rgba(20, 20, 20, 0.85);
@@ -399,7 +399,7 @@ body {
 
     position: absolute;
     top: 240px;
-    left: 40%;
+    left: 50%;
     transform: translateX(-50%);
     z-index: 10;
 
@@ -483,32 +483,6 @@ body {
     font-weight: bold;
 }
 
-/* APPS */
-.apps {
-    position: absolute;
-    bottom: 25px;
-    left: 0;
-    width: 100%;
-
-    display: flex;
-    justify-content: space-evenly;
-}
-
-/* APP ICON */
-.app {
-    width: 60px;
-    height: 60px;
-    border-radius: 18px;
-
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 28px;
-}
 /* SWIPE ANIMATION */
 .phone {
     transition: transform 0.4s;
@@ -675,27 +649,30 @@ body {
 
 .app-instagram {
     background: linear-gradient(135deg, #ff0080, #, #ffd000);
-    border: 1px solid rgb(58, 57, 55);
     margin-bottom: 50px;
+    position: relative;
+    top: -100px;
 }
 .app-whatsapp {
     background: linear-gradient(135deg, #25d366, #128c7e);
-    border: 1px solid #25d366;
-
-    /* PRIDAJ TENTO RIADOK: Záporná hodnota vystrelí ikonu smerom HORE */
-    transform: translateY(-20px);
+    position: relative;
+    top: -100px;
 }
+
 .app-snapchat {
-    background: linear-gradient(135deg, #fffc00, #ffd500);
-
-    border: 1px solid #fff700;
-
-    color: black;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+    position: relative;
+    top: -100px; /* Týmto číslom hýbeš hore/dole. Ak je málo, daj -400px */
+    left: -140%;
 }
-.app-messenger {
-    background: linear-gradient(135deg, #00b2ff, #006aff);
 
-    border: 1px solid #4cc2ff;
+.app-messenger {
+    background: linear-gradient(135deg, #5f5f5f, #1f1f1f);
+    position: relative;
+    top: -2px; /* Posunie ho hore (uprav číslo, ak ho chceš vyššie/nižšie) */
+    left: -295px; /* Posunie ho doľava presne pod Instagram */
 }
 .app-camera {
     background: linear-gradient(135deg, #5f5f5f, #1f1f1f);
@@ -703,14 +680,10 @@ body {
     border: 1px solid #8b8b8b;
 }
 .app-gallery {
-    background: linear-gradient(135deg, #ff5fa2, #8f5bff);
-
-    border: 1px solid #c48fff;
+    background: linear-gradient(135deg, #5f5f5f, #1f1f1f);
 }
 .app-mail {
-    background: linear-gradient(135deg, #4da3ff, #005eff);
-
-    border: 1px solid #79b8ff;
+    background: linear-gradient(135deg, #5f5f5f, #1f1f1f);
 }
 
 .apps-grid::before {
@@ -739,11 +712,33 @@ body {
 
     z-index: -1;
 }
-/* Vyberie poslednú ikonu v každom stĺpci (tvoj spodný riadok) */
-.app-column .app:last-child {
-    margin-top: 60px; /* TÁTO MEDZERA: Odtlačí spodný riadok od aplikácií nad ním */
-}
 
 .app-camera-move {
     margin-top: -630px;
+}
+
+.app-calls-move {
+    margin-top: 576px;
+    left: 10%;
+}
+.app-music-move {
+    position: relative;
+    top: 95px;
+    right: 12%;
+}
+/* POSÚVANIE A WHATSAPPU */
+.app-whatsapp-move {
+    margin-top: -100px; /* Záporná hodnota posúva aplikáciu HORE */
+}
+
+.app-gallery {
+    position: relative;
+    top: -580px; /* Posunie ju hore na úroveň kamery */
+    left: -10px; /* Posunie ju doprava vedľa kamery */
+}
+
+.app-mail {
+    position: relative;
+    top: -580px; /* Posunie ho hore na úroveň kamery */
+    left: -20px; /* Posunie ho doprava vedľa galérie */
 }
